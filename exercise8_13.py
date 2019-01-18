@@ -40,7 +40,7 @@ def unified_list(number_list):
     for draw in number_list:
         draw_list = draw.split()
         master_list += draw_list
-    return master_list
+    return master_list, draw_list
 
 def times_each_appears(a_list):
     counter = 0
@@ -143,6 +143,51 @@ def top10overdue(times,numbers,original_list):
         print(top10overdue[index] + '\t--->\t' + str(top10notseenfor[index]))
     print()
 
+def seperate_frequency(a_list):
+    powerballs = []
+    powerballs_count = []
+    non_powerballs = []
+    non_powerballs_count = []
+    counter = 0
+    number = 0
+    for count in range(1,27):
+        number = count
+        # Split the list into draws
+        for draw in a_list:
+            draw_list = draw.split()
+            if int(draw_list[5]) == number:
+                counter += 1
+        powerballs.append(number)
+        powerballs_count.append(counter)
+        counter = 0
+
+    for count in range(1,70):
+        number = count
+        for draw in a_list:
+            draw_list = draw.split()
+            for searchnumber in draw_list:
+                if int(searchnumber) == number:
+                    counter += 1
+        non_powerballs.append(number)
+        non_powerballs_count.append(counter)
+        counter = 0
+        
+    print('Powerballs Frequency')
+    print('--------------------')
+    print()
+    print('Number\t\tTimes')
+    print('------\t\t-----')
+    for index in range(len(powerballs)):
+        print(str(powerballs[index]) + '\t--->\t' + str(powerballs_count[index]))
+    print()
+    print('Regulars Frequency')
+    print('------------------')
+    print()
+    print('Number\t\tTimes')
+    print('------\t\t-----')
+    for index in range(len(non_powerballs)):
+        print(str(non_powerballs[index]) + '\t--->\t' + str(non_powerballs_count[index]))
+
 def main():
     infile = open('pbnumbers.txt', 'r')
     
@@ -152,11 +197,12 @@ def main():
     # Strip the '\n' from the end of the elements
     for index in range(len(contents)):
         contents[index] = contents[index].rstrip('\n')
-    master_list = unified_list(contents)
+    master_list,split_list = unified_list(contents)
     numbersfound,timesfound = times_each_appears(master_list)
     
     top10common(timesfound,numbersfound)
     bottom10common(timesfound,numbersfound)
     top10overdue(timesfound,numbersfound,master_list)
+    seperate_frequency(contents)
     infile.close()
 main()
