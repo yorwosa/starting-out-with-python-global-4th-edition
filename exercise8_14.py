@@ -116,8 +116,25 @@ def list_of_prices_lowest_to_highest(dates,prices):
     for index in range(len(min_to_max_prices)):
         print(min_to_max_dates[index],'\t',min_to_max_prices[index])
 
-def list_of_prices_highest_to_lowest():
-    pass
+def list_of_prices_highest_to_lowest(dates,prices):
+    max_to_min_prices = []
+    max_to_min_dates = []
+    price_list_ = []
+    date_list = dates
+    for index in range(len(prices)):
+        price_list_.append(float(prices[index]))
+    for count in range(len(price_list_)):
+        max_to_min_prices.append(max(price_list_))
+        max_to_min_dates.append(dates[price_list_.index(max(price_list_))])
+        del date_list[price_list_.index(max(price_list_))]
+        del price_list_[price_list_.index(max(price_list_))]
+    print('List of Prices, Highest to Lowest')
+    print('---------------------------------')
+    print()
+    print('Date\t\tPrice')
+    print('----\t\t-----')
+    for index in range(len(max_to_min_prices)):
+        print(max_to_min_dates[index],'\t',max_to_min_prices[index])
 
 def main():
     infile = open('GasPrices.txt', 'r')
@@ -132,6 +149,7 @@ def main():
     average_price_per_month(date_list,price_list)
     highest_lowest_price_per_year(date_list,price_list)
     list_of_prices_lowest_to_highest(date_list,price_list)
+    list_of_prices_highest_to_lowest(date_list,price_list)
 
 
 main()
