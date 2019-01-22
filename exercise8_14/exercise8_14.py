@@ -101,6 +101,7 @@ def list_of_prices_lowest_to_highest(dates,prices):
     min_to_max_dates = []
     price_list_ = []
     date_list = dates[:]
+    outfile = open('LowToHigh.txt','w')
     for index in range(len(prices)):
         price_list_.append(float(prices[index]))
     for count in range(len(price_list_)):
@@ -115,12 +116,16 @@ def list_of_prices_lowest_to_highest(dates,prices):
     print('----\t-----')
     for index in range(len(min_to_max_prices)):
         print(min_to_max_dates[index],'\t',min_to_max_prices[index])
+        outfile.write(str(min_to_max_dates[index]) + ':' + str(min_to_max_prices[index]) + '\n')
+    outfile.close()
+
 
 def list_of_prices_highest_to_lowest(dates,prices):
     max_to_min_prices = []
     max_to_min_dates = []
     price_list_ = []
     date_list = dates[:]
+    outfile = open('HighToLow.txt', 'w')
     for index in range(len(prices)):
         price_list_.append(float(prices[index]))
     for count in range(len(price_list_)):
@@ -135,6 +140,7 @@ def list_of_prices_highest_to_lowest(dates,prices):
     print('----\t\t-----')
     for index in range(len(max_to_min_prices)):
         print(max_to_min_dates[index],'\t',max_to_min_prices[index])
+        outfile.write(str(max_to_min_dates[index]) + ':' + str(max_to_min_prices[index]) + '\n')
 
 def main():
     infile = open('GasPrices.txt', 'r')
