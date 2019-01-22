@@ -99,15 +99,15 @@ def highest_lowest_price_per_year(dates,prices):
 def list_of_prices_lowest_to_highest(dates,prices):
     min_to_max_prices = []
     min_to_max_dates = []
-    price_list = []
-    date_list = dates
+    price_list_ = []
+    date_list = dates[:]
     for index in range(len(prices)):
-        price_list.append(float(prices[index]))
-    for count in range(len(price_list)):
-        min_to_max_prices.append(min(price_list))
-        min_to_max_dates.append(dates[price_list.index(min(price_list))])
-        del date_list[price_list.index(min(price_list))]
-        del price_list[price_list.index(min(price_list))]
+        price_list_.append(float(prices[index]))
+    for count in range(len(price_list_)):
+        min_to_max_prices.append(min(price_list_))
+        min_to_max_dates.append(dates[price_list_.index(min(price_list_))])
+        del date_list[price_list_.index(min(price_list_))]
+        del price_list_[price_list_.index(min(price_list_))]
     print('List of Prices, Lowest to Highest')
     print('---------------------------------')
     print()
@@ -120,12 +120,12 @@ def list_of_prices_highest_to_lowest(dates,prices):
     max_to_min_prices = []
     max_to_min_dates = []
     price_list_ = []
-    date_list = dates
+    date_list = dates[:]
     for index in range(len(prices)):
         price_list_.append(float(prices[index]))
     for count in range(len(price_list_)):
         max_to_min_prices.append(max(price_list_))
-        max_to_min_dates.append(dates[price_list_.index(max(price_list_))])
+        max_to_min_dates.append(date_list[price_list_.index(max(price_list_))])
         del date_list[price_list_.index(max(price_list_))]
         del price_list_[price_list_.index(max(price_list_))]
     print('List of Prices, Highest to Lowest')
@@ -140,16 +140,16 @@ def main():
     infile = open('GasPrices.txt', 'r')
     infile_list = infile.readlines()
     date_list = []
-    price_list = []
+    price_lists = []
     for line in infile_list:
         date_list.append(line[0:10])
-        price_list.append(line[11:].rstrip('\n'))
+        price_lists.append(line[11:].rstrip('\n'))
     infile.close()
-    average_price_per_year(date_list,price_list)
-    average_price_per_month(date_list,price_list)
-    highest_lowest_price_per_year(date_list,price_list)
-    list_of_prices_lowest_to_highest(date_list,price_list)
-    list_of_prices_highest_to_lowest(date_list,price_list)
+    average_price_per_year(date_list,price_lists)
+    average_price_per_month(date_list,price_lists)
+    highest_lowest_price_per_year(date_list,price_lists)
+    list_of_prices_lowest_to_highest(date_list,price_lists)
+    list_of_prices_highest_to_lowest(date_list,price_lists)
 
 
 main()
