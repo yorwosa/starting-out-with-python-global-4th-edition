@@ -1,0 +1,14 @@
+Write a program that generates 100 random numbers between 1 and 10. The program
+should store the frequency of each number generated in a dictionary with the number as
+the key and the amount of times it has occurred as the value. For example, if the program
+generates the number 6 a total of 11 times, the dictionary will contain a key of 6 with an
+associated value of 11. Once all of the numbers have been generated, display information
+about the frequency of each number.
+6. File Analysis
+Write a program that reads the contents of two text files and compares them in the fol-
+lowing ways:
+It should display a list of all the unique words contained in both files.
+It should display a list of the words that appear in both files.
+It should display a list of the words that appear in the first file but not the second.
+It should display a list of the words that appear in the second file but not the first.
+It should display a list of the words that appear in either the first
