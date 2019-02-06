@@ -1,0 +1,14 @@
+Computers can perform such a wide variety of tasks because they can be programmed. This
+means that computers are not designed to do just one job, but to do any job that their pro-
+grams tell them to do. A program is a set of instructions that a computer follows to perform
+a task. For example, Figure 1-1 shows screens using Microsoft Word and PowerPoint, two
+commonly used programs.
+Programs are commonly referred to as software. Software is essential to a computer because
+it controls everything the computer does. All of the software that we use to make our com-
+puters useful is created by individuals working as programmers or software developers. A
+programmer, or software developer, is a person with the training and skills necessary to
+design, create, and test computer programs. Computer programming is an exciting and
+rewarding career. Today, you will find programmers’ work used in business, medicine, gov-
+ernment, law enforcement, agriculture, academics, entertainment, and many other fields.
+This book introduces you to the fundamental concepts of computer programming using the
+Python language. The Python language is a good choice for beginners because it is easy to learn
