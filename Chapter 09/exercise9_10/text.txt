@@ -1,0 +1,17 @@
+When an object’s data attributes are hidden from outside code, and access to the data attri-
+butes is restricted to the object’s methods, the data attributes are protected from accidental
+corruption. In addition, the code outside the object does not need to know about the format
+or internal structure of the object’s data. The code only needs to interact with the object’s
+methods. When a programmer changes the structure of an object’s internal data attributes,
+he or she also modifies the object’s methods so they may properly operate on the data. The
+way in which outside code interacts with the methods, however, does not change.
+Object Reusability
+In addition to solving the problems of code and data separation, the use of OOP has also
+been encouraged by the trend of object reusability. An object is not a stand-alone program,
+but is used by programs that need its services. For example, Sharon is a programmer who
+has developed a set of objects for rendering 3D images. She is a math whiz and knows a
+lot about computer graphics, so her objects are coded to perform all of the necessary 3D
+mathematical operations and handle the computer’s video hardware. Tom, who is writing a
+program for an architectural firm, needs his application to display 3D images of buildings.
+Because he is working under a tight deadline and does not possess a great deal of knowl-
+edge about computer graphics,
