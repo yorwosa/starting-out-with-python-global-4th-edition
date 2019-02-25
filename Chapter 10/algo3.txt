@@ -1,0 +1,38 @@
+Look at the following description of a problem domain:
+
+The bank offers the following types of accounts to its customers: savings accounts,
+checking accounts, and money market accounts. Customers are allowed to deposit
+money into an account (thereby increasing its balance), withdraw money from an
+account (thereby decreasing its balance), and earn interest on the account. Each
+account has an interest rate.
+
+Assume that you are writing a program that will calculate the amount of interest
+earned for a bank account.
+
+a. Identify the potential classes in this problem domain.
+b. Refine the list to include only the necessary class or classes for this problem.
+c. Identify the responsibilities of the class or classes.
+
+
+account
+-The account's type
+-The account's balance
+-The account's interest
+
+- Withdraw money
+- Deposit money
+- Show balance
+
+---------------------------------
+Account				|
+---------------------------------
+__type				|
+__balance			|
+__interest			|
+---------------------------------
+__init__(type,balance,interest)	|
+set_type(type)			|
+deposit(balance)		|
+withdraw(balance)		|
+__str__()			|
+---------------------------------z
