@@ -26,27 +26,12 @@
 #stored as the object’s attributes. Use the object’s accessor methods to retrieve the pet’s
 #name, type, and age and display this data on the screen.
 
-class Pet:
-    
-    def __init__(self,name,animal_type,age):
-        self.__name = name
-        self.__animal_type = animal_type
-        self.__age = age
-    
-    def set_name(self,name):
-        self.__name = name
-    
-    def set_age(self,age):
-        self.__age = age
-    
-    def set_animal_type(self,animal_type):
-        self.__animal_type = animal_type
-    
-    def get_name(self):
-        return self.__name
-    
-    def get_animal_type(self):
-        return self.__animal_type
-    
-    def get_age(self):
-        return self.__age
+import exercise1
+
+name = input('What is the name of your pet? ')
+animal_type = input('What kind of animal is it? ')
+age = input('How old is it? ')
+
+my_pet = exercise1.Pet(name,animal_type,age)
+
+print('You have a',my_pet.get_animal_type,'named',my_pet.get_name,'and it is',my_pet.get_age,'years old.')
