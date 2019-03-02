@@ -33,5 +33,4 @@ animal_type = input('What kind of animal is it? ')
 age = input('How old is it? ')
 
 my_pet = exercise1.Pet(name,animal_type,age)
-
-print('You have a',my_pet.get_animal_type,'named',my_pet.get_name,'and it is',my_pet.get_age,'years old.')
+print('You have a',my_pet.get_animal_type(),'named',my_pet.get_name(),'and it is',my_pet.get_age(),'years old.')
