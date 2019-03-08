@@ -21,7 +21,7 @@
 # The program should display the patient’s information, information about all
 # three of the procedures, and the total charges of the three procedures.
 
-class Paient:
+class Patient:
     def __init__(self,first_name,middle_name,last_name,address,city,state,zip_code,
                  phone_number,emergency_contact_name,emergency_contact_number):
         self.__first_name = first_name
@@ -76,3 +76,10 @@ class Paient:
         self.__emergency_contact_name = emergency_contact_name
     def set_emergency_contact_number(self,emergency_contact_number):
         self.__emergency_contact_number = emergency_contact_number
+    
+    def __str__(self):
+        return 'Patient: ' + self.__first_name + ' ' + self.__middle_name + ' ' + self.__last_name + \
+               '\nAddress: ' + self.__address + ', ' +  self.__city + ', ' +  self.__state + ', ' +  self.__zip_code + \
+               '\nPhone: ' + self.__phone_number + \
+               '\nEmergency contact: ' + self.__emergency_contact_name + \
+               '\nNumber: ' + self.__emergency_contact_number

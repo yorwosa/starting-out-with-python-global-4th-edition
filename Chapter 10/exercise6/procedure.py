@@ -45,3 +45,9 @@ class Procedure:
         self.__practitioner = practitioner
     def set_charge(self,charge):
         self.__charge = charge
+        
+    def __str__(self):
+        return 'Name: ' + self.__name + \
+               '\nDate: ' + self.__date + \
+               '\nPractitioner: ' + self.__practitioner + \
+               '\nCharge: ' + self.__charge
